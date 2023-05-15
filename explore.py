@@ -21,7 +21,7 @@ from sklearn.preprocessing import QuantileTransformer
 #######FUNCTIONS
 
 def plot_variable_pairs(df):
-    sns.pairplot(df.sample(100000), corner=True, kind='reg')
+    sns.pairplot(corner=True, kind='reg')
     plt.show()
         
 def plot_categorical_and_continuous_vars(df, cont_var, cat_var):
