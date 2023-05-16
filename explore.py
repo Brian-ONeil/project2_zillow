@@ -23,6 +23,7 @@ from sklearn.preprocessing import QuantileTransformer
 def plot_variable_pairs(df):
     sns.pairplot(corner=True, kind='reg')
     plt.show()
+    
         
 def plot_categorical_and_continuous_vars(df, cont_var, cat_var):
     # Plot a boxplot of the continuous variable for each category
@@ -42,6 +43,7 @@ def plot_categorical_and_continuous_vars(df, cont_var, cat_var):
     sns.swarmplot(x=cat_var, y=cont_var, data=df)
     plt.title(f'{cont_var} by {cat_var}')
     plt.show()
+    
     
 def scale_data(train, 
                validate, 
@@ -65,4 +67,5 @@ def scale_data(train,
     test_scaled[to_scale] = scaler.transform(test[to_scale])
     
     return train_scaled, validate_scaled, test_scaled
+
 
