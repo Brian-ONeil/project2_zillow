@@ -21,9 +21,18 @@ from sklearn.preprocessing import QuantileTransformer
 #######FUNCTIONS
 
 def plot_variable_pairs(df):
-    sns.pairplot(corner=True, kind='reg')
+    sns.pairplot(data=df, corner=True, kind='reg')
     plt.show()
     
+
+    
+def rename_col(df, list_of_columns=[]):
+    '''
+    Take df with incorrect names and will return a renamed df using the 'list_of_columns' which will contain a list of appropriate names for the columns
+    '''
+    df = df.rename(columns=dict(zip(df.columns, list_of_columns)))
+    return df
+
         
 def plot_categorical_and_continuous_vars(df, cont_var, cat_var):
     # Plot a boxplot of the continuous variable for each category
@@ -62,10 +71,19 @@ def scale_data(train,
     scaler.fit(train[to_scale])
 
     #use the thing
-    train_scaled[to_scale] = scaler.transform(train[to_scale])
-    validate_scaled[to_scale] = scaler.transform(validate[to_scale])
-    test_scaled[to_scale] = scaler.transform(test[to_scale])
+    train_scaled = scaler.transform(train[to_scale])
+    validate_scaled = scaler.transform(validate[to_scale])
+    test_scaled = scaler.transform(test[to_scale])
+    
+#     train_scaled[to_scale] = scaler.transform(train[to_scale])
+#     validate_scaled[to_scale] = scaler.transform(validate[to_scale])
+#     test_scaled[to_scale] = scaler.transform(test[to_scale])
+ 
+    train_scaled, validate_scaled, test_scaled = pd.DataFrame(train_scaled), pd.DataFrame(validate_scaled), pd.DataFrame(test_scaled)
+    train_scaled, validate_scaled, test_scaled  = rename_col(train_scaled, to_scale), rename_col(validate_scaled, to_scale), rename_col(test_scaled, to_scale)
     
     return train_scaled, validate_scaled, test_scaled
+
+
 
 

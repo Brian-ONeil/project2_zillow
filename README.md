@@ -13,10 +13,13 @@
 * Make recommendations on what works or doesn't work in predicting these homes' values.
 
 * Other key drivers:
-
+    * Does lotsize_sf correlate with taxvalue?
+    * Does finished_sf correlate with taxvalue?
+    * Is there significance in the means for bedroomcnt and taxvalue?¶
+    * Is there significance in the means for garagecarcnt and taxvalue?
 ## Initial Thoughts
 
-* 
+* There are some key indicators in the data that may predict the 'taxvalue' and that those indicators will be evident by the conclusion of the project.
 
 ## The Plan
 
@@ -35,19 +38,17 @@
 
 * Explore dataset for predictors of property value ('taxvalue')
     * Answer the following questions:
-        * Does bedroomcnt help predict property value?
-        * Does bathroomcnt help predict property value?
-        * Does finished_sf help predict property value?
-        * Does garagecarcnt help predict property value?
-        * Does lotsize_sf help predict property value?
-        * Does yearbuilt help predict property value?
-        * Does county help predict property value?
+    * Does lotsize_sf correlate with taxvalue?
+    * Does finished_sf correlate with taxvalue?
+    * Is there significance in the means for bedroomcnt and taxvalue?¶
+    * Is there significance in the means for garagecarcnt and taxvalue?
 
 * Develop a model
     * Using the selected data features develop appropriate predictive models
-    * Evaluate the models in action using train and validate splits
+    * Evaluate the models in action using train and validate splits as well as scaled data
     * Choose the most accurate model 
     * Evaluate the most accurate model using the final test data set
+    * Draw conclusions
 
 ## Data Dictionary
 
@@ -63,6 +64,9 @@
 | county       | County in which the property resides. a.k.a 'fips' 6037=Los Angeles County, 6059=Orange County,  6111=Ventura County |             |
 
 ## Steps to Reproduce
+1) Clone the repo git@github.com:Brian-ONeil/project1_telco.git in terminal
+2) Use personal env.py to connect to download SQL telco dataset
+3) Run notebook
 
 ## Takeaways and Conclusions
 
