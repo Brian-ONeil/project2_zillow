@@ -23,9 +23,7 @@ from sklearn.preprocessing import QuantileTransformer
 def plot_variable_pairs(df):
     sns.pairplot(data=df, corner=True, kind='reg')
     plt.show()
-    
-
-    
+        
 def rename_col(df, list_of_columns=[]):
     '''
     Take df with incorrect names and will return a renamed df using the 'list_of_columns' which will contain a list of appropriate names for the columns

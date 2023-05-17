@@ -6,11 +6,11 @@
 
 ## Project Goals
 
-* Construct an ML Regression model that predicts propery tax assessed values ('taxvaluedollarcnt') of Single Family Properties using attributes of the properties.
+* Build a regression model for 'taxvalue' specifically for single family homes using different features available in the Zillow data set.
 
-* Deliver a report that the data science team can read through and replicate, understand what steps were taken, why and what the outcome was.
+* Report conclusions for a predictive model that can be used in the future based on the outcome of the best model.
 
-* Make recommendations on what works or doesn't work in predicting these homes' values.
+* Take lessons learned from the regression model and provide any recommendations the data science team can use in the future to build an even better model.
 
 * Other key drivers:
     * Does lotsize_sf correlate with taxvalue?
@@ -64,11 +64,22 @@
 | county       | County in which the property resides. a.k.a 'fips' 6037=Los Angeles County, 6059=Orange County,  6111=Ventura County |             |
 
 ## Steps to Reproduce
-1) Clone the repo git@github.com:Brian-ONeil/project1_telco.git in terminal
+1) Clone the repo git@github.com:Brian-ONeil/project2_zillow.git in terminal
 2) Use personal env.py to connect to download SQL telco dataset
 3) Run notebook
 
 ## Takeaways and Conclusions
+Models used:
+* The final Polynomial Regression Model performed on the test data set was above baseline and an r2 score slightly less than the validate set, but still .2 r2 score higher than any other model. Overall the model is less than ideal and would like to see if at least .5 r2 score is achievable with added features such as stories or feature engineering bedroom, bathroom, and garage as a total.
+
+* Does lotsize_sf correlate with taxvalue? Yes
+* Does finished_sf correlate with taxvalue? Yes
+* How does the means for bedroomcnt and taxvalue compare?¶Yes
+* How does the means for garagecarcnt and taxvalue compare? Yes
+
 
 ## Recommendations
-
+* Consider feature engineering bedroom, bathroom, and garage total.
+* Consider tweeking hyperparameters for the different models.
+* Consider seeing if building type data is retreivable in other areas as it could be valuable.
+* Consider running the models on a counties that don't fluctuate quite as much as Southern California.

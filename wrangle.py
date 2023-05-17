@@ -70,8 +70,6 @@ def wrangle_zillow(df):
     return df
 
 
-
-
 def split_data(df):
     '''
     Takes in a dataframe and returns train, validate, test subset dataframes
@@ -104,9 +102,6 @@ def scaler_robust(X_train, X_validate, X_test):
     '''
     scaler = RobustScaler()
     return scaler.fit_transform(X_train), scaler.transform(X_validate), scaler.transform(X_test)
-
-
-
 
 
 def scaled_data_to_dataframe(X_train, X_validate, X_test):
